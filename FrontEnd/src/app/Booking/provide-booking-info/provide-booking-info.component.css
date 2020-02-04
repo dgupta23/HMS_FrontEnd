@@ -1,8 +1,8 @@
 #cover {
-    background: #222 url('https://unsplash.it/1920/1080/?random') center center no-repeat;
+    /* background: #222 url('https://unsplash.it/1920/1080/?random') center center no-repeat; */
     background-size: cover;
     height: 100%;
-    text-align: center;
+    /* text-align: center; */
     display: flex;
     align-items: center;
     position: relative;
@@ -14,8 +14,15 @@
     z-index: 1;
 }
 
+.hover {
+    transform: scaleX(-1);
+    width: 300;
+    height: 200;
+}
+
+
 /* only used for background overlay not needed for centering */
-form:before {
+/* form:before {
     content: '';
     height: 100%;
     left: 0;
@@ -25,4 +32,4 @@ form:before {
     background-color: rgba(0,0,0,0.3);
     z-index: -1;
     border-radius: 10px;
-}
+} */

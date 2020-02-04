@@ -1,0 +1,65 @@
+<section id="cover" class="min-vh-100">
+    <div id="cover-caption">
+        <div class="container">
+            <div class="container col-6">
+            <h4> How would you like to pay??</h4>
+            
+            </div>
+            <br>
+            <div class="row justify-content-center">
+                <div class="col-6">
+
+                <form action="" class="justify-content-center">
+                            
+                <div class="form-group col-md-12">
+                    <p>please select an option for payment</p>
+                <label class="radio-inline"><input type="radio" name="optradio" checked>Debit Card</label>&nbsp;&nbsp;
+                <label class="radio-inline"><input type="radio" name="optradio">Credit Card</label>&nbsp;&nbsp;
+                <label class="radio-inline"><input type="radio" name="optradio">Paytm</label>
+                <br>
+                <br>
+                <label for="cardnumber">Card Number</label>
+                <input type="text" id="cardnumber" name="cardnumber" class="form-control" placeholder="xxxx xxxx xxxx xxxx" required>
+                
+                <div *ngIf="!name.value && name.touched " class="alert alert-danger ">
+                    Field required</div>
+                
+                <!-- </div> -->
+               <br> 
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+            <div class="form-group">
+                <label for="expirydate">Expiry Date</label>
+                <input type="text" id="expirydate" name="expirydate" class="form-control" placeholder="Month" required>
+                <div *ngIf="!expirydate.value && expirydate.touched " class="alert alert-danger ">
+                    Field required</div>
+            </div>
+            </div>
+                
+            <div class="col-md-6">
+            <div class="form-group">
+                <label for="expirydate"></label>
+                <input type="text" id="expirydate" class="form-control" placeholder="Year" required>
+            </div>
+            </div>
+        </div>
+    </div>
+
+                <label for="cardholdername">Card Holder Name</label>
+                <input type="text" id="cardholdername" name="cardholdername" class="form-control" placeholder="alexander" required>
+
+                <label for="securitycode">Security Code</label>
+                <input type="text" id="securitycode" name="securitycode" class="form-control" placeholder="CVV" required>
+
+                        <br>
+                        <p>By clicking the below button payment will be made</p>
+                        <button type="submit" class="btn btn-dark btn-lg">Continue</button>
+                    </div>
+                    
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
