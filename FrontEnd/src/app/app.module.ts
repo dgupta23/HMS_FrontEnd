@@ -22,6 +22,7 @@ import {AddHotelService} from './add-hotel/add-hotel.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddHotelComponent } from './add-hotel/add-hotel.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { ProfileComponent } from './profile/profile.component';
     RegisterComponent,
     AddHotelComponent,
     ProfileComponent,
+    FooterComponent,
   
    
   ],
