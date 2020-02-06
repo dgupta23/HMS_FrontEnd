@@ -1,0 +1,38 @@
+<div class="container my-2 py-2 bg-light">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Hotel name</label>
+          <input  
+            class="form-control" 
+            id="exampleFormControlInput1"
+            [(ngModel)]="hotel.hotelName"
+            name="hotel.hotelName"
+          >
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">City</label>
+          <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="hotel.location" name="hotel.location">
+            <option>Bangalore</option>
+            <option>New Delhi</option>
+            <option>Hyderabad</option>
+            <option>Kolkata</option>
+            <option>Mumbai</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">No of Rooms</label>
+            <input  class="form-control" id="exampleFormControlInput1" type="number" [(ngModel)]="hotel.noOfRooms" name="hotel.noOfRooms">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Amenities</label>
+            <input  class="form-control" id="exampleFormControlInput1" type="text" [(ngModel)]="hotel.amenities" name="hotel.amenities">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Price per Room</label>
+            <input  class="form-control" id="exampleFormControlInput1" type="number" [(ngModel)]="hotel.pricePerRoom" name="hotel.pricePerRoom">
+          </div>
+        <button class="btn btn-success" type="submit">Add Hotel</button>
+      </form>
+</div>
+

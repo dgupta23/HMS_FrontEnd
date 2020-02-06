@@ -28,28 +28,29 @@
     </ul>
     <ul class="navbar-nav">
       <li class="nav-item dropdown">
-          <a *ngIf='loggedUser' tab-index="-1" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="fa fa-user"></span>Hi! &nbsp; {{name}}
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" routerLink="/">
-                  <span class="fa fa-user"> &nbsp;</span>Profile</a>
-                  <a *ngIf='user_role === true' class="dropdown-item" routerLink="/Admin/createproductmaster">
-                    <span class="fa fa-user-plus"> &nbsp;</span>Add Product Master</a>
-                <a *ngIf='user_role === false' class="dropdown-item" href="#" routerLink="/register">
-                    <span class="fa fa-shopping-bag"> &nbsp;</span>Place Orders</a>
-              
-          </div>
+        <a *ngIf='loggedUser' tab-index="-1" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="fa fa-user"></span>Hi! &nbsp; {{name}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/profile">
+            <span class="fa fa-user"> &nbsp;</span>Profile</a>
+          <a *ngIf='user_role === true' class="dropdown-item" routerLink="/add-hotel">
+            <span class="fa fa-user-plus"> &nbsp;</span>Add Hotel</a>
+          <a *ngIf='user_role === false' class="dropdown-item" href="#" routerLink="/register">
+            <span class="fa fa-shopping-bag"> &nbsp;</span>Place Orders</a>
+
+        </div>
       </li>
-      <li *ngIf='!loggedUser' class="nav-item">
-          <a class="nav-link" href="#" routerLink='/login'><span
-                  class="fa fa-hourglass" ></span> Login</a>
-      </li>
-      <li *ngIf='loggedUser' class="nav-item">
-          <a class="nav-link" href="#" (click)='logout()'><span
-                  class="fa fa-power-off"  style="position: relative;" ></span> Logout</a>
-      </li>
-  </ul>
+    </ul>
+    <div class="align-self-end ml-auto">
+      <button class="btn btn-outline-dark navbar-btn" style="float:right;" *ngIf='!loggedUser'><a class="nav-link"
+          style="float:right;" href="#" routerLink='/login'>Login</a></button>
+      <button class="btn btn-outline-dark navbar-btn" *ngIf='!loggedUser'><a class="nav-link" style="float:right;"
+          href="#" routerLink='/register'>Sign Up</a></button>&nbsp;&nbsp;
+      <button class="btn btn-outline-dark navbar-btn" *ngIf='loggedUser'><a class="nav-link" style="float:right;"
+          href="#" (click)='logout()'>Logout</a></button>&nbsp;&nbsp;
+    </div>
     <!-- <div class="align-self-end ml-auto">
       <button class="btn btn-outline-dark navbar-btn" style="float:right;"> <a class="nav-link" href="#"
           routerLink='/login'>Login</a></button>

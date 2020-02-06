@@ -18,8 +18,10 @@ import { UserRegisterServiceModule } from './user/register/register.service';
 import { ToastrModule } from 'ngx-toastr';
 
 import { CommonModule } from '@angular/common';
-
+import {AddHotelService} from './add-hotel/add-hotel.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddHotelComponent } from './add-hotel/add-hotel.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PaymentInfoComponent,
     LoginComponent,
     RegisterComponent,
+    AddHotelComponent,
+    ProfileComponent,
   
    
   ],
@@ -46,7 +50,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ToastrModule.forRoot(),
     
   ],
-  providers: [UserLoginServiceModule,UserRegisterServiceModule],
+  providers: [UserLoginServiceModule,UserRegisterServiceModule,AddHotelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
