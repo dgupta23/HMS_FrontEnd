@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+            <div class="user_card">
+                <div class="d-flex justify-content-center">
+                    <div class="brand_logo_container">
+                        <img src="data:image/png;base64,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"
+                            class="brand_logo" alt="Logo">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center form_container">
+                    <form (ngSubmit)='loginUser()' #userLoginform="ngForm" class="goforms" id="user-login-form">
+                        <div class="pannel-heading heading-green">
+                            <div class="pannel-title">
+                                <h4>Log-In Form</h4>
+                            </div>
+
+                        </div>
+                        <br><br>
+
+
+                        <div class="form-group" [class.has-error]="userRegisMail.invalid && userRegisMail.touched">
+                            <label for="userreg-mail">Email</label>
+                            <input type="text" class="form-control" id="user-reg-mail"
+                                pattern="^[a-z0-9_.]+@[a-z0-9]+\.[a-z0-9.]+$" name="userregmail"
+                                placeholder="Enter e-mail" required ngModel #userRegisMail="ngModel"  [(ngModel)]='existUser.mail'>
+                            <span class="help-block" style="color:red"
+                                *ngIf="userRegisMail.errors?.required && userRegisMail.touched">Email is required</span>
+                            <span class="help-block" style="color:red"
+                                *ngIf="userRegisMail.errors?.pattern && userRegisMail.touched">Email is invalid</span>
+                        </div>
+
+
+                        <div class="form-group" [class.has-error]="userLoginPass.invalid && userLoginPass.touched">
+                            <label for="user-log-pass">Password</label>
+                            <input type="password" class="form-control"
+                                pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
+                                id="user-log-pass" name="userlogpass" placeholder="Enter password" required ngModel
+                                #userLoginPass="ngModel"  [(ngModel)]='existUser.password'>
+                            <span class="help-block" style="color:red"
+                                *ngIf="userLoginPass.errors?.required && userLoginPass.touched">Password is
+                                required</span>
+
+                        </div>
+                        <div class="loginBtn">
+                            <button type="submit" class="button "
+                                [disabled]="userLoginform.invalid" style="margin-block-end: initial;">Log-In</button>
+                            <a routerLink="/register" class="regBtn" style="color:rgb(12, 10, 10)">Register</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
