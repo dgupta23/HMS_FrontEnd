@@ -44,7 +44,8 @@ export class LoginComponent implements OnInit {
     let loguser: User = Object.assign({}, this.existUser);
     this._userservice.loginUser(loguser).subscribe(
       data => {
-        if ((JSON.stringify(data).indexOf("Error") >= 0)) {
+        console.log(data)
+        if ((JSON.stringify(data).indexOf("User Cannot be logged-in!!!") >= 0)) {
           
           this.toasterService.error(
             JSON.stringify(data),
@@ -56,11 +57,10 @@ export class LoginComponent implements OnInit {
             })
           this.userLogForm.reset();
           this._router.navigate(['/']);
+
+                    
         }
         else {
-
-
-
           this.toasterService.success(
             "Login Successfull ! Welcome to NIRMAN",
             this.message,
@@ -76,7 +76,10 @@ export class LoginComponent implements OnInit {
           UserLoginServiceModule.loginEventEmitter.emit(UserLoginServiceModule.loginEventEmitter);
           this.userLogForm.reset();
           this._router.navigate(['/']);
+
+   
           
+         
         }
         
       },
