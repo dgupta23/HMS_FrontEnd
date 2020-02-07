@@ -27,8 +27,6 @@ export class UserRegisterServiceModule {
             "mail": newUser.mail,
             "password": newUser.password,
             "phone": newUser.phone.toString(),
-            
-            
-        })
+        },{responseType:"text"})
     }
 }

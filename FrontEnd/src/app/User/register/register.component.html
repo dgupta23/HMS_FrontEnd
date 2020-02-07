@@ -52,7 +52,7 @@
 
                         <div class="form-group" [class.has-error]="userRegisPhone.invalid && userRegisPhone.touched">
                             <label for="user-reg-phone">Phone</label>
-                            <input type="text" class="form-control" id="user-reg-phone" pattern="^\d{10}$" name="phone"
+                            <input type="text" class="form-control" maxlength="10" id="user-reg-phone" pattern="^\d{10}$" name="phone"
                                 placeholder="Enter phone number" required ngModel #userRegisPhone="ngModel" [(ngModel)]='newUser.phone'>
                             <span class="help-block" style="color:red"
                                 *ngIf="userRegisPhone.errors?.required && userRegisPhone.touched">Phone number is
@@ -84,7 +84,7 @@
                             </span>
 
                         </div>
-
+<!-- 
                         <div class="form-group" [class.has-error]="userRegConfPass.invalid && userRegConfPass.touched">
                             <label for="prod-mast-conf-psw">Confirm Password</label>
                             <input type="password" class="form-control" id="prod-mast-conf-psw" name="confpsw"
@@ -97,7 +97,7 @@
                                 *ngIf="userRegConfPass.errors?.notEqual && userRegConfPass.touched && !userRegConfPass.errors?.required">Confirm
                                 Password does not matches with Password</span>
 
-                        </div>
+                        </div> -->
 
                        
 

@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
     let regUser : User = Object.assign({},this.newUser);
     this._registerservice.loginUser(regUser).subscribe(
       data => {
-        if (JSON.stringify(data).indexOf("Success") >= 0) {
+        if (JSON.stringify(data).indexOf("User added successfully") >= 0) {
 
           this.toasterService.success(
             JSON.stringify(data),
@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
               progressBar: true,
             })
           this.userRegForm.reset();
-          this._router.navigate(['/login']);
+          this._router.navigate(['/']);
         }
         else {
 
@@ -59,7 +59,7 @@ export class RegisterComponent implements OnInit {
               progressBar: true,
             })
           this.userRegForm.reset();
-          this._router.navigate(['/login']);
+          this._router.navigate(['/']);
 
         }
       },
@@ -74,7 +74,7 @@ export class RegisterComponent implements OnInit {
             progressBar: true,
           })
         this.userRegForm.reset();
-        this._router.navigate(['/login']);
+        this._router.navigate(['/']);
       }
     );
    

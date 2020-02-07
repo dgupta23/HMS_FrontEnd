@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hotel } from '../Models/hotel';
 import { AddHotelService } from './add-hotel.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-hotel',
@@ -10,8 +11,8 @@ import { AddHotelService } from './add-hotel.service';
 export class AddHotelComponent implements OnInit {
  
   hotel: Hotel;
-  success:string;
-  constructor(private service:AddHotelService) { 
+  message:string;
+  constructor(private service:AddHotelService, private toasterService: ToastrService) { 
     this.hotel = new Hotel();
   }
 
@@ -23,9 +24,12 @@ export class AddHotelComponent implements OnInit {
    this.service.addHotel(this.hotel)
    .subscribe(
      data=>{
-       this.success=JSON.stringify(data);
-       console.log(this.success);
-       
+       this.message=JSON.stringify(data);
+       console.log(this.message);
+       if((JSON.stringify(data).indexOf("successfully") >= 0))
+          this.toasterService.success(this.message);
+        else
+          this.toasterService.error(this.message);
      }
    );
   }
