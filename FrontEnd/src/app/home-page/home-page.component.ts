@@ -7,6 +7,7 @@ import { HomePageService } from './home-page.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
+  public hidden : boolean;
   location:string;
   checkInDate:Date;
   checkOutDate:Date;
@@ -14,6 +15,7 @@ export class HomePageComponent implements OnInit {
   constructor(private service:HomePageService) { }
 
   ngOnInit() {
+    this.hidden =true;
   }
 
   onSubmit(){
@@ -21,8 +23,10 @@ export class HomePageComponent implements OnInit {
       data=>{
         this.hotels=data;
         console.log(this.hotels);
+        
       }
-    )
+    );
+    this.hidden= false;
   }
 
   // onSubmitForAdmin(){

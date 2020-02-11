@@ -53,10 +53,11 @@
     text-transform: capitalize;
 }
 .red-border {
-    width: 50%;
+    width: 175%;
     border-bottom: 1px solid #d2282e;
     margin: 0 auto;
     height: 16px;
+    align-content: center;
 }
 .company-sections p {
     margin-top: 20px;
@@ -69,6 +70,7 @@
 }
 .marginTop40 {
     margin-top: 40px !important;
+    margin-left: 400px;
 }
 .ct-u-paddingBoth100 {
     padding: 100px 15px;

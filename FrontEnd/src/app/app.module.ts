@@ -24,6 +24,7 @@ import { AddHotelComponent } from './add-hotel/add-hotel.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { SearchResultService } from './search-result/search-result.service';
 
 
 @NgModule({
@@ -54,7 +55,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ToastrModule.forRoot(),
     
   ],
-  providers: [UserLoginServiceModule,UserRegisterServiceModule,AddHotelService],
+  providers: [UserLoginServiceModule,UserRegisterServiceModule,AddHotelService,SearchResultService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

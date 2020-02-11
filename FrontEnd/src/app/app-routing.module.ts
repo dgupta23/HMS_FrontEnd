@@ -6,6 +6,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import {AddHotelComponent} from './add-hotel/add-hotel.component';
 import {ProfileComponent} from './profile/profile.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { SearchResultComponent } from './search-result/search-result.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -18,6 +20,8 @@ const routes: Routes = [
   {path:'add-hotel', component:AddHotelComponent},
   {path:'profile', component: ProfileComponent},
   {path:'aboutus', component: AboutUsComponent},
+  {path:'filter', component: SearchResultComponent},
+  {path:'footer', component:FooterComponent},
   
 ];
 

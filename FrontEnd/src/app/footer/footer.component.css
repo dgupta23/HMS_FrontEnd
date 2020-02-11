@@ -1,11 +1,14 @@
 footer {
     background-color: #cf0505;
+    margin-top:100px;
     color: rgb(209, 121, 121);
-    background: url("C:\Users\araj15\Documents\GitHub\HMS_FrontEnd\FrontEnd\src\assets\images\logo.png") center left no-repeat;
+    background: url("C:\Users\araj15\Documents\GitHub\HMS_FrontEnd\FrontEnd\src\assets\images\logo.png") center left no-repeat ;
+    height: 200px;
+    width: 2000px;
 }
 
 footer a {
-    color: rgba(255, 255, 255, 0.329);
+    color: rgba(49, 6, 245, 0.329);
 }
 
 footer a:hover {
