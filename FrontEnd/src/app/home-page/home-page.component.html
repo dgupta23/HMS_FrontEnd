@@ -1,39 +1,4 @@
-<!-- 
-<section id="cover" class="min-vh-100">
-    <div id="cover-caption">
-        <div class="container">
-            <div class="row text-white">
-                <div class="col-xl-5 col-lg-8 col-md-10 col-sm-10 mx-auto text-center form p-4">
-                    <p class="display-4 py-2 text-truncate">Search your Hotel</p>
-                    <div class="px-4">
-                        <form action="" class="justify-content-center">
-                            
-                            <div class="form-group">
-                                <label class="sr-only">City/Hotel</label>
-                                <input type="text" class="form-control" placeholder="City/Hotel">
-                            </div>
-                
-                            <div class="form-group">
-                                <label class="sr-only">Check-in Date</label>
-                                <input type="date" class="form-control" placeholder="Check-in Date">
-                            </div>
-                          
-                    
-                            <div class="form-group">
-                                <label class="sr-only">Check-out Date</label>
-                                <input type="date" class="form-control" placeholder="Check-out Date">
-                            </div>
-                           
-                            
-                            
-                            <button type="submit" class="btn btn-dark btn-lg">Search</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
+
 
 <body>
     <section id="cover" class="min-vh-100">
@@ -43,21 +8,30 @@
                   <div class="tabing">
                      
                      <div class="tab-content">
-                        <div id="1" class="tab1 active">
+                        <form (ngSubmit)="onSubmit()"  id="1" class="tab1 active">
                            <div class="flight-tab row">
                               <div class="persent-one">
                                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                 <input type="text" name="dep" class="textboxstyle" id="dep" placeholder="City/Hotel">
+                                 <label name="dep" class="textboxstyle" id="dep" placeholder="City/Hotel">
+                                 <select class="form-control" placeholder="Location" id="exampleFormControlSelect1" [(ngModel)]="location" name="location">
+                                    <option>Bangalore</option>
+                                    <option>New Delhi</option>
+                                    <option>Hyderabad</option>
+                                    <option>Kolkata</option>
+                                    <option>Mumbai</option>
+                                  </select>
+                                 </label>
                               </div>
                              
                               <div class="persent-one less-per">
                                  <i class="fa fa-calendar" aria-hidden="true"></i>
-                                 <input type="text" name="dep" class="textboxstyle" id="from-date1" placeholder="Check-In Date">
+                                 <input type="date" name="dep" class="textboxstyle" id="from-date1" placeholder="Check-In Date"  [(ngModel)]="checkInDate" name="checkInDate">Check-In Date
+                               
                               </div>
                               
                               <div class="persent-one less-per">
                                  <i class="fa fa-calendar" aria-hidden="true"></i>
-                                 <input type="text" name="dep" class="textboxstyle" id="to-date" placeholder="Check-Out Date">
+                                 <input type="date" name="dep" class="textboxstyle" id="to-date" placeholder="Check-Out Date" [(ngModel)]="checkOutDate" name="checkOutDate">Check-Out Date
                               </div>
                              
                               <div class="persent-one less-btn">
@@ -65,7 +39,7 @@
                               </div>
                            </div>
                            <!-- flight tab -->
-                        </div>
+                        </form>
                        
                      </div>
                      </div>
@@ -75,4 +49,25 @@
                </div>
                
         </section>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Hotel Name</th>
+              <th>Location</th>
+              <th>Price per Room</th>
+              <th>No Of Rooms</th>
+              <th>Amenities</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let hotel of hotels">
+                  <td>{{hotel.hotelName}}</td>
+                  <td>{{hotel.location}}</td>
+                  <td>{{hotel.pricePerRoom}}</td>
+                  <td>{{hotel.noOfRooms}}</td>
+                  <td>{{hotel.amenities}}</td>
+                  <td><button class="btn btn-success" routerLink="/list-payment"> Book hotel</button></td>
+              </tr>
+            </tbody>
+          </table>
             </body>

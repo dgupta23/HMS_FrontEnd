@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddHotelComponent } from './add-hotel/add-hotel.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { FooterComponent } from './footer/footer.component';
     AddHotelComponent,
     ProfileComponent,
     FooterComponent,
+    AboutUsComponent,
   
    
   ],
