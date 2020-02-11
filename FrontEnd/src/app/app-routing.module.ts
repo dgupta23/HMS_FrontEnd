@@ -8,6 +8,9 @@ import {ProfileComponent} from './profile/profile.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { FooterComponent } from './footer/footer.component';
+import { ViewBookingComponent } from './view-booking/view-booking.component';
+import { ProvideBookingInfoComponent } from './Booking/provide-booking-info/provide-booking-info.component';
+import { PaymentInfoComponent } from './Booking/payment-info/payment-info.component';
 
 
 
@@ -22,6 +25,9 @@ const routes: Routes = [
   {path:'aboutus', component: AboutUsComponent},
   {path:'filter', component: SearchResultComponent},
   {path:'footer', component:FooterComponent},
+  {path:'view-booking', component:ViewBookingComponent},
+  {path:'confirm-booking',component:ProvideBookingInfoComponent},
+  {path:'payment',component:PaymentInfoComponent}
   
 ];
 

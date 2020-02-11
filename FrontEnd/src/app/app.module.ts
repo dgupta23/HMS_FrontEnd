@@ -25,6 +25,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { SearchResultService } from './search-result/search-result.service';
+import { ViewBookingComponent } from './view-booking/view-booking.component';
+import { ViewBookingService } from './view-booking/view-booking.service';
 
 
 @NgModule({
@@ -41,6 +43,7 @@ import { SearchResultService } from './search-result/search-result.service';
     ProfileComponent,
     FooterComponent,
     AboutUsComponent,
+    ViewBookingComponent,
   
    
   ],
@@ -55,7 +58,7 @@ import { SearchResultService } from './search-result/search-result.service';
     ToastrModule.forRoot(),
     
   ],
-  providers: [UserLoginServiceModule,UserRegisterServiceModule,AddHotelService,SearchResultService],
+  providers: [UserLoginServiceModule,UserRegisterServiceModule,AddHotelService,SearchResultService,ViewBookingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

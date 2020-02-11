@@ -7,6 +7,7 @@ import { HomePageService } from './home-page.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
+
   public hidden : boolean;
   location:string;
   checkInDate:Date;

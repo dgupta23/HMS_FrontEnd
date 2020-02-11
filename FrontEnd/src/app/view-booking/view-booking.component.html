@@ -1,0 +1,31 @@
+<div class="main-class"  >View Your Booking
+    <div class="persent-one less-btn">
+        <input type="Submit" name="submit"  value="View" (click)="viewBookings()" class="btn btn-info cst-btn" id="srch">
+     </div>
+</div>
+
+<table class="table table-striped" [hidden]="hidden" >
+    <thead>
+    <tr>
+      <th>Hotel ID</th>
+      <th>Guest Name</th>
+      <th>No. of Guests</th>
+      <th>Phone Number</th>
+      <th>Check-In Date</th>
+      <th>Check-Out Date</th>
+     
+    </tr>
+   
+    </thead>
+    <tbody>
+      <tr *ngFor="let view of views" >
+          <td>{{view.hotelID}}</td>
+          <td>{{view.guestName}}</td>
+          <td>{{view.noOfGuests}}</td>
+          <td>{{view.phoneNo}}</td>
+          <td>{{view.checkinDate}}</td>
+          <td>{{view.checkoutDate}}</td>
+         
+      </tr>
+    </tbody>
+  </table>

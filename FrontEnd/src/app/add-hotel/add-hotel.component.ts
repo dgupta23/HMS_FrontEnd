@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Hotel } from '../Models/hotel';
 import { AddHotelService } from './add-hotel.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-hotel',
@@ -12,7 +13,8 @@ export class AddHotelComponent implements OnInit {
  
   hotel: Hotel;
   message:string;
-  constructor(private service:AddHotelService, private toasterService: ToastrService) { 
+  constructor(private service:AddHotelService, private toasterService: ToastrService,private _router: Router,
+    private _route: ActivatedRoute, ) { 
     this.hotel = new Hotel();
   }
 
@@ -26,10 +28,13 @@ export class AddHotelComponent implements OnInit {
      data=>{
        this.message=JSON.stringify(data);
        console.log(this.message);
-       if((JSON.stringify(data).indexOf("successfully") >= 0))
+       if((JSON.stringify(data).indexOf("successfully") >= 0)){
           this.toasterService.success(this.message);
-        else
+          this._router.navigate(['/']);}
+        else{
           this.toasterService.error(this.message);
+          this._router.navigate(['/add-hotel']);
+        }
      }
    );
   }
