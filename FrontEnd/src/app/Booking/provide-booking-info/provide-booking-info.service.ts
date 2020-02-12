@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-
-import {ViewBooking } from 'src/app/models/viewbooking.model';
 import { HttpClient } from '@angular/common/http';
+import { BookingLogDetails } from 'src/app/Models/BookingLogDetails';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +13,7 @@ export class ConfirmBookingService {
     
    }
 
-  confirmBooking(newUser:ViewBooking){
-    return this.http.post(this.confirmBookUrl,newUser,{ responseType: 'text' });
+  confirmBooking(bookingLogDetails:BookingLogDetails){
+    return this.http.post(this.confirmBookUrl,bookingLogDetails,{ responseType: 'text' });
   }
 }
