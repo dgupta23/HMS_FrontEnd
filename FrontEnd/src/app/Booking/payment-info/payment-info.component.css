@@ -2,6 +2,7 @@
 body {
   background-color: #ffb242;
   font-family: lato, 'helvetica-light';
+  margin-top: 100px;
   position: relative;
   text-transform: uppercase;
   padding: 20px 0;
