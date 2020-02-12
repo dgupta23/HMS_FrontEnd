@@ -4,11 +4,12 @@
         margin: 0;
         padding: 0;
         height: 150%;
+      
         background:  #60a3bc ;
     }
     .user_card {
         height: 750px;
-        width: 350px;
+        width: 800px;
         margin-top: 80px;
         margin-bottom: auto;
         background: #f39c12;
@@ -67,4 +68,8 @@
     }
     .custom-checkbox .form-check .custom-control-input:checked~.custom-control-label::before {
         background-color: #c0392b !important;
+    }
+
+    .form-group{
+        width: 600px;
     }

@@ -27,7 +27,7 @@ const routes: Routes = [
   {path:'footer', component:FooterComponent},
   {path:'view-booking', component:ViewBookingComponent},
   {path:'confirm-booking',component:ProvideBookingInfoComponent},
-  {path:'payment',component:PaymentInfoComponent}
+  {path:'payment',component:PaymentInfoComponent},
   
 ];
 
