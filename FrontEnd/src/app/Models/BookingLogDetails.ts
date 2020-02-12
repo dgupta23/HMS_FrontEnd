@@ -1,5 +1,6 @@
-import {ReservationList} from "./ReservationList";
+
+import { Reservation } from './Reservation';
 export class BookingLogDetails{
-    reservationList:ReservationList;
-    emailID:string;
+    reservations:Reservation[];
+    emailId:string;
 }

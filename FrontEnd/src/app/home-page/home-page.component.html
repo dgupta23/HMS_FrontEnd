@@ -8,7 +8,7 @@
                   <div class="tabing">
                      
                      <div class="tab-content">
-                        <form (ngSubmit)="onSubmit()"  id="1" class="tab1 active">
+                        <form (ngSubmit)="onSubmit()"  #searchForm="ngForm" id="1" class="tab1 active">
                            <div class="flight-tab row">
                               <div class="persent-one">
                                  <i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -25,17 +25,17 @@
                              
                               <div class="persent-one less-per">
                                  <i class="fa fa-calendar" aria-hidden="true"></i>
-                                 <input type="date" name="dep" class="textboxstyle" id="from-date1" placeholder="Check-In Date"  [(ngModel)]="checkInDate" name="checkInDate">Check-In Date
+                                 <input type="date" name="dep" class="textboxstyle" id="from-date1" min="2020-02-11"  max="2020-12-31" placeholder="Check-In Date"  [(ngModel)]="checkInDate" name="checkInDate"><b><font color="yellow">Check-In Date</font></b>
                                
                               </div>
                               
                               <div class="persent-one less-per">
                                  <i class="fa fa-calendar" aria-hidden="true"></i>
-                                 <input type="date" name="dep" class="textboxstyle" id="to-date" placeholder="Check-Out Date" [(ngModel)]="checkOutDate" name="checkOutDate">Check-Out Date
+                                 <input type="date" name="dep" class="textboxstyle" id="to-date" min="2020-02-11"  max="2020-12-31" placeholder="Check-Out Date" [(ngModel)]="checkOutDate" name="checkOutDate"><b><font color="yellow">Check-Out Date</font></b>
                               </div>
                              
-                              <div class="persent-one less-btn">
-                                 <input type="Submit" name="submit"  value="Search" class="btn btn-info cst-btn" id="srch">
+                              <div class="persent-one less-btn"  >
+                                 <input type="Submit" name="submit" value="Search" class="btn btn-info cst-btn" id="srch">
                               </div>
                            </div>
                            <!-- flight tab -->

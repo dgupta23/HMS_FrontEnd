@@ -1,6 +1,6 @@
 #cover {
     /* background: #222 url('https://unsplash.it/1920/1080/?random') center center no-repeat; */
-    /* background-image: url(C:\Users\araj15\Documents\GitHub\HMS_FrontEnd\FrontEnd\src\assets\images\1.jpg); */
+    background-image: url(C:\Users\araj15\Documents\GitHub\HMS_FrontEnd\FrontEnd\src\assets\images\1.jpg); 
     /* background-image: url(C:\Users\araj15\Documents\GitHub\HMS_FrontEnd\FrontEnd\src\assets\images\2.jpg); */
     /* background-image: url(C:\Users\araj15\Documents\GitHub\HMS_FrontEnd\FrontEnd\src\assets\images\3.jpg); */
     background-size: cover;
@@ -58,7 +58,7 @@
 }
 .tabing {
    align-items: center;
-    width: 70%;
+    width: 100%;
     background: rgba(75, 7, 235, 0.8);
     padding: 0 10px 50px 10px;
     color: #fff;

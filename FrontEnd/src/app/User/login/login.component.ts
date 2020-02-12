@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
               progressBar: true,
             })
           this.userLogForm.reset();
-          this._router.navigate(['/']);
+          this._router.navigate(['/home']);
 
                     
         }
@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
           UserLoginServiceModule.loggedINUser = JSON.stringify(localStorage.getItem('currentUser'));
           UserLoginServiceModule.loginEventEmitter.emit(UserLoginServiceModule.loginEventEmitter);
           this.userLogForm.reset();
-          this._router.navigate(['/']);
+          this._router.navigate(['/home']);
 
    
           
@@ -95,7 +95,7 @@ export class LoginComponent implements OnInit {
             progressBar: true,
           })
         this.userLogForm.reset();
-        this._router.navigate(['/']);
+        this._router.navigate(['/home']);
       }
     );
 

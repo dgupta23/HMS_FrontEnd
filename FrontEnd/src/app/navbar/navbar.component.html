@@ -16,7 +16,7 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="nav navbar-nav  justify-content-right">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/">Home</a>
+        <a class="nav-link" routerLink="/home">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#" routerLink="/aboutus">About Us</a>
@@ -40,10 +40,10 @@
       </li>
     </ul>
     <div class="nav-item">
-      <a *ngIf='user_role === true' class="nav-link" href="#" routerLink='/add-hotel'> <span class="fa fa-user-plus"> &nbsp;</span>Add Hotel</a>
+      <a *ngIf='user_role == true' class="nav-link" href="#" routerLink='/add-hotel'> <span class="fa fa-user-plus"> &nbsp;</span>Add Hotel</a>
     </div>
     <div class="nav-item">
-      <a  *ngIf='user_role === false' class="nav-link" href="#" routerLink='/view-booking' >
+      <a  *ngIf='user_role == false' class="nav-link" href="#" routerLink='/view-booking' >
         <span class="fa fa-shopping-bag"> &nbsp;</span>View Booking</a>
     </div>
     <div class="align-self-end ml-auto">

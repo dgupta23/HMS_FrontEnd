@@ -27,6 +27,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { SearchResultService } from './search-result/search-result.service';
 import { ViewBookingComponent } from './view-booking/view-booking.component';
 import { ViewBookingService } from './view-booking/view-booking.service';
+import { PaymentConfirmationComponent } from './Booking/payment-confirmation/payment-confirmation.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { ViewBookingService } from './view-booking/view-booking.service';
     FooterComponent,
     AboutUsComponent,
     ViewBookingComponent,
+    PaymentConfirmationComponent,
   
    
   ],

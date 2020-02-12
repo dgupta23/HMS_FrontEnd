@@ -77,7 +77,7 @@ export class NavbarComponent implements OnInit {
           localStorage.setItem('currentUser', JSON.stringify(data));
           UserLoginServiceModule.loggedINUser = JSON.stringify(localStorage.getItem('currentUser'));
           UserLoginServiceModule.loginEventEmitter.emit(UserLoginServiceModule.loginEventEmitter); 
-          this.router.navigate(['/']);
+          this.router.navigate(['/home']);
         }
         else {
 
@@ -89,7 +89,7 @@ export class NavbarComponent implements OnInit {
               closeButton: true,
               progressBar: true,
             })
-          this.router.navigate(['']);
+          this.router.navigate(['/home']);
 
         }
       },
@@ -104,7 +104,7 @@ export class NavbarComponent implements OnInit {
             progressBar: true,
           })
         
-        this.router.navigate(['']);
+        this.router.navigate(['/home']);
       }
     );
 

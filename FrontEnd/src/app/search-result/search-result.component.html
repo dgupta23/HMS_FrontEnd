@@ -1,53 +1,66 @@
-<section id="cover" class="min-vh-100">
-    <div id="cover-caption">
-        <div class="container">
-            <div class="row text-white">
-                <div class="col-xl-5 col-lg-8 col-md-10 col-sm-10 mx-auto text-center form p-4">
-                    <p class="display-4 py-2 text-truncate">Search your Hotel</p>
-                    <div class="px-4">
-                        <form (ngSubmit)="onSubmit()" action="" class="justify-content-center">
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">City</label>
-                                <select class="form-control" placeholder="Location" id="exampleFormControlSelect1" [(ngModel)]="location" name="location">
+
+
+<body>
+  <section id="cover" class="min-vh-100">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<div id="cover-caption">
+             <div class="container">
+                <div class="tabing">
+                   
+                   <div class="tab-content">
+                      <form (ngSubmit)="onSubmit()"  #searchForm="ngForm" id="1" class="tab1 active">
+                         <div class="flight-tab row">
+                            <div class="persent-one">
+                               <i class="fa fa-map-marker" aria-hidden="true"></i>
+                               <label name="dep" class="textboxstyle" id="dep" placeholder="City/Hotel">
+                               <select class="form-control" placeholder="Location" id="exampleFormControlSelect1" [(ngModel)]="location" name="location">
                                   <option>Bangalore</option>
                                   <option>New Delhi</option>
                                   <option>Hyderabad</option>
                                   <option>Kolkata</option>
                                   <option>Mumbai</option>
                                 </select>
-                              </div>
-  
-                                <div class="form-group">
-                                    <label class="sr-only">Check-in Date</label>
-                                    <input type="date" class="form-control" placeholder="Check-in Date" [(ngModel)]="checkInDate" name="checkInDate">
-                                </div>
-  
-  
-                                <div class="form-group">
-                                    <label class="sr-only">Check-out Date</label>
-                                    <input type="date" class="form-control" placeholder="Check-out Date" [(ngModel)]="checkOutDate" name="checkOutDate">
-                                </div>
-                                
-                                <div class="form-group">
-                                  <label class="sr-only">Minimum Price</label>
-                                  <input type="number" class="form-control" placeholder="Minimum Price" [(ngModel)]="minPrice" name="minPrice">
-                              </div>
-  
-  
-                              <div class="form-group">
-                                  <label class="sr-only">Maximum Price</label>
-                                  <input type="number" class="form-control" placeholder="Maximum Price" [(ngModel)]="maxPrice" name="maxPrice">
-                              </div>
-  
-                            <button class="btn btn-success" type="submit">Search Hotel</button>
-                        </form>
-                    </div>
+                               </label>
+                            </div>
+                           
+                            <div class="persent-one less-per">
+                               <i class="fa fa-calendar" aria-hidden="true"></i>
+                               <input type="date" name="dep" class="textboxstyle" id="from-date1" min="2020-02-11"  max="2020-12-31" placeholder="Check-In Date"  [(ngModel)]="checkInDate" name="checkInDate"><b><font color="red">Check-In Date</font></b>
+                             
+                            </div>
+                            
+                            <div class="persent-one less-per">
+                               <i class="fa fa-calendar" aria-hidden="true"></i>
+                               <input type="date" name="dep" class="textboxstyle" id="to-date" min="2020-02-11"  max="2020-12-31" placeholder="Check-Out Date" [(ngModel)]="checkOutDate" name="checkOutDate"><b><font color="red">Check-Out Date</font></b>
+                            </div>
+                         </div>
+                  <div>
+                            <div class="persent-one less-per">
+                              <label class="sr-only">Minimum Price</label>
+                              <input type="number" class="form-control" placeholder="Minimum Price" [(ngModel)]="minPrice" name="minPrice">
+                          </div>
+
+
+                          <div class="persent-one less-per">
+                              <label class="sr-only">Maximum Price</label>
+                              <input type="number" class="form-control" placeholder="Maximum Price" [(ngModel)]="maxPrice" name="maxPrice">
+                          </div>
+
+                            <div class="persent-one less-btn"  >
+                              <input type="Submit" name="submit" value="Search" class="btn btn-info cst-btn" id="srch">
+                            </div>
+                         </div>
+                         <!-- flight tab -->
+                      </form>
+                     
+                   </div>
+                   </div>
+                   <!-- tab content -->
                 </div>
-            </div>
-        </div>
-    </div>
-  </section>
-  
+                <!-- tabbing -->
+             </div>
+             
+      </section>
   <table class="table table-striped" [hidden]="hidden">
     <thead>
     <tr>

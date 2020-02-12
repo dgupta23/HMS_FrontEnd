@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-center form_container">
-                    <form (ngSubmit)='confirmBooking()' #bookingForm="ngForm" class="goforms"
+                    <form (ngSubmit)="confirmBooking()" #bookingForm="ngForm" class="goforms"
                         id="booking-form">
                         <div class="pannel-heading heading-green">
                             <div class="pannel-title">
@@ -43,7 +43,8 @@
                         <div class="form-group" [class.has-error]="userRegisName.invalid && userRegisName.touched">
                             <label for="user-reg-name">Guest Name</label>
                             <input type="text" class="form-control" id="user-reg-name" name="reservation.guestName"
-                                placeholder="Enter Guest name" required ngModel #userRegisName="ngModel" [(ngModel)]="reservation.guestName">
+                                placeholder="Enter Guest name" required ngModel #userRegisName="ngModel" [(ngModel)]="reservation.guestName"
+                                >
                             <span class="help-block" style="color:red"
                                 *ngIf="userRegisName.invalid && userRegisName.touched">Guest Name is required</span>
                         </div>
@@ -51,8 +52,9 @@
                        
                         <div class="form-group" [class.has-error]="userRegisPhone.invalid && userRegisPhone.touched">
                             <label for="user-reg-phone">Phone</label>
-                            <input type="text" class="form-control" maxlength="10" id="user-reg-phone" pattern="^\d{10}$" name="reservation.phoneNo"
-                                placeholder="Enter phone number" required ngModel #userRegisPhone="ngModel" [(ngModel)]="reservation.phoneNo">
+                            <input type="number" class="form-control" maxlength="10" id="user-reg-phone" pattern="[0-9]*" pattern="^\d{10}$" name="reservation.phoneNo"
+                                placeholder="Enter phone number" required ngModel #userRegisPhone="ngModel" [(ngModel)]="reservation.phoneNo"
+                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                             <span class="help-block" style="color:red"
                                 *ngIf="userRegisPhone.errors?.required && userRegisPhone.touched">Phone number is
                                 required</span>
@@ -63,22 +65,24 @@
 
                         <div class="form-group" [class.has-error]="guestNumber.invalid && guestNumber.touched">
                           <label for="guest-number">No. of Guests</label>
-                          <input type="text" class="form-control" id="guest-number" name="reservation.noOfGuests"
-                              placeholder="Enter Guest number" required ngModel #guestNumber="ngModel" [(ngModel)]="reservation.noOfGuests">
+                          <input type="number" class="form-control"  maxlength="1" pattern="^\d{10}$" min="1" max="4" id="guest-number" name="reservation.noOfGuests"
+                              placeholder="Enter Guest number" required ngModel #guestNumber="ngModel" [(ngModel)]="reservation.noOfGuests"
+                              maxlength="1" pattern="[0-9]*"
+                              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                           <span class="help-block" style="color:red"
                               *ngIf="guestNumber.invalid && guestNumber.touched">No. of Guest is required</span>
                       </div>
 
                       <div class="form-group" [class.has-error]="checkin.invalid && checkin.touched">
                         <label for="check-in">Check-In Date</label>
-                        <input type="date" class="form-control" id="check-in" name="newUser.checkinDate"
+                        <input type="date" class="form-control" id="check-in" min="2020-02-11"  max="2020-12-31" name="newUser.checkinDate"
                             placeholder="Enter Check-In Date" required ngModel #checkin="ngModel" [(ngModel)]="reservation.checkinDate">
                         <span class="help-block" style="color:red"
                             *ngIf="checkin.invalid && checkin.touched">Check-In Date is required</span>
                     </div>
                     <div class="form-group" [class.has-error]="checkout.invalid && checkout.touched">
                       <label for="check-in">Check-Out Date</label>
-                      <input type="date" class="form-control" id="check-out" name="reservation.checkoutDate"
+                      <input type="date" class="form-control" id="check-out" name="reservation.checkoutDate" min="2020-02-11" max="2020-12-31"
                           placeholder="Enter Check-out Date" required ngModel #checkout="ngModel" [(ngModel)]="reservation.checkoutDate">
                       <span class="help-block" style="color:red"
                           *ngIf="checkout.invalid && checkout.touched">Check-Out Date is required</span>

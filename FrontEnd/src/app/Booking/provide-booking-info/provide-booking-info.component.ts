@@ -21,9 +21,7 @@ export class ProvideBookingInfoComponent implements OnInit {
   constructor(private service:ConfirmBookingService, private toasterService: ToastrService,private _router: Router,
     private _route: ActivatedRoute, ) { 
       this.reservation=new Reservation();
-      this.reservations.push(this.reservation);
-      this.bookingLogDetails.reservationList.reservations=this.reservations;
-      this.bookingLogDetails.emailID="akash@gmail.com";
+      
   }
 
   ngOnInit() {
@@ -31,18 +29,23 @@ export class ProvideBookingInfoComponent implements OnInit {
   }
 
   confirmBooking(){
-   // console.log(this.hotel);
-   this.service.confirmBooking(this.bookingLogDetails)
+    console.log(this.reservation);
+    
+    this.bookingLogDetails=new BookingLogDetails();
+    this.reservations=new Array(this.reservation);
+    this.bookingLogDetails.reservations=this.reservations;
+    this.bookingLogDetails.emailId="akash@gmail.com";
+    this.service.confirmBooking(this.bookingLogDetails)
    .subscribe(
      data=>{
        this.message=JSON.stringify(data);
        console.log(this.message);
        if((JSON.stringify(data).indexOf("successful") >= 0)){
-          this.toasterService.success(this.message);
+        
           this._router.navigate(['/payment']);}
         else{
           this.toasterService.error(this.message);
-          this._router.navigate(['/']);
+          this._router.navigate(['/home']);
         }
      }
    );

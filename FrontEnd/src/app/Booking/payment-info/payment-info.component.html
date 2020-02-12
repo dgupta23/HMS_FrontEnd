@@ -21,7 +21,8 @@
       <label for="card-number">
           Card Number
         </label>
-      <input type="number" id="card-number" placeholder="1234 5678 9101 1112" minlength="16" maxlength="16">
+      <input type="number" id="card-number" placeholder="1234 5678 9101 1112" maxlength="16" pattern="[0-9]*"
+       oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
       <div id="cardholder-container">
         <label for="card-holder">Card Holder
         </label>
@@ -32,13 +33,17 @@
         <label for="card-exp">
             Expiration
           </label>
-        <input id="card-month" type="number" placeholder="MM" length="2">
-        <input id="card-year" type="number" placeholder="YY" length="2">
+        <input id="card-month" type="number" placeholder="MM" maxlength="2" pattern="[0-9]*"
+        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+        <input id="card-year" type="number" placeholder="YY" maxlength="2" pattern="[0-9]*"
+        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
       </div>
           <div id="cvc-container">
         <label for="card-cvc"> CVC/CVV</label>
-        <input id="card-cvc" placeholder="XXX" type="number" min-length="3" max-length="4">
-        <p>Last 3 or 4 digits</p>
+        <input id="card-cvc" placeholder="XXX" type="number" minlength="3"
+        maxlength="3" pattern="[0-9]*"
+        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+        <p>Last 3 digits</p>
       </div>
       <!--- end CVC container --->
       <!--- end exp container --->
@@ -51,7 +56,7 @@
     </div>
     <!--- end card back --->
     <input type="text" id="card-token" />
-    <button type="button" id="card-btn">Submit</button>
+    <button type="button" id="card-btn" routerLink="/payment-confirm">Submit</button>
   
   </div>
   <!--- end form container --->

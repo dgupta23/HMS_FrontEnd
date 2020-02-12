@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ViewBookingComponent } from './view-booking/view-booking.component';
 import { ProvideBookingInfoComponent } from './Booking/provide-booking-info/provide-booking-info.component';
 import { PaymentInfoComponent } from './Booking/payment-info/payment-info.component';
+import { PaymentConfirmationComponent } from './Booking/payment-confirmation/payment-confirmation.component';
 
 
 
@@ -18,6 +19,7 @@ import { PaymentInfoComponent } from './Booking/payment-info/payment-info.compon
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
+  { path: 'home', component: HomePageComponent },
   { path: 'login', component : LoginComponent },
   { path: 'register', component : RegisterComponent},
   {path:'add-hotel', component:AddHotelComponent},
@@ -28,7 +30,7 @@ const routes: Routes = [
   {path:'view-booking', component:ViewBookingComponent},
   {path:'confirm-booking',component:ProvideBookingInfoComponent},
   {path:'payment',component:PaymentInfoComponent},
-  
+  {path:'payment-confirm',component: PaymentConfirmationComponent},
 ];
 
 @NgModule({

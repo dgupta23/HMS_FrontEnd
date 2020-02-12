@@ -30,7 +30,7 @@ export class AddHotelComponent implements OnInit {
        console.log(this.message);
        if((JSON.stringify(data).indexOf("successfully") >= 0)){
           this.toasterService.success(this.message);
-          this._router.navigate(['/']);}
+          this._router.navigate(['/home']);}
         else{
           this.toasterService.error(this.message);
           this._router.navigate(['/add-hotel']);

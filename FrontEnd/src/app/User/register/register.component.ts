@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
               progressBar: true,
             })
           this.userRegForm.reset();
-          this._router.navigate(['/']);
+          this._router.navigate(['/home']);
         }
         else {
 
@@ -59,7 +59,7 @@ export class RegisterComponent implements OnInit {
               progressBar: true,
             })
           this.userRegForm.reset();
-          this._router.navigate(['/']);
+          this._router.navigate(['/home']);
 
         }
       },
@@ -74,7 +74,7 @@ export class RegisterComponent implements OnInit {
             progressBar: true,
           })
         this.userRegForm.reset();
-        this._router.navigate(['/']);
+        this._router.navigate(['/home']);
       }
     );
    
