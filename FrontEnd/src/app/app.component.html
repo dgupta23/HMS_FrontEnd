@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
 <router-outlet></router-outlet>
+<ngx-loading [show]="showLoadingIndicator" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>
 <!-- <app-home-page></app-home-page> -->
 <!-- <app-provide-booking-info></app-provide-booking-info> -->
 <!-- <app-payment-info></app-payment-info> -->

@@ -25,13 +25,13 @@
                            
                             <div class="persent-one less-per">
                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                               <input type="date" name="dep" class="textboxstyle" id="from-date1" min="2020-02-11"  max="2020-12-31" placeholder="Check-In Date"  [(ngModel)]="checkInDate" name="checkInDate"><b><font color="red">Check-In Date</font></b>
+                               <input type="date" name="dep" class="textboxstyle" id="from-date1" min="2020-02-24"  max="2020-12-31" placeholder="Check-In Date"  [(ngModel)]="checkInDate" name="checkInDate"><b><font color="red">Check-In Date</font></b>
                              
                             </div>
                             
                             <div class="persent-one less-per">
                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                               <input type="date" name="dep" class="textboxstyle" id="to-date" min="2020-02-11"  max="2020-12-31" placeholder="Check-Out Date" [(ngModel)]="checkOutDate" name="checkOutDate"><b><font color="red">Check-Out Date</font></b>
+                               <input type="date" name="dep" class="textboxstyle" id="to-date" min="2020-02-24"  max="2020-12-31" placeholder="Check-Out Date" [(ngModel)]="checkOutDate" name="checkOutDate"><b><font color="red">Check-Out Date</font></b>
                             </div>
                          </div>
                   <div>
@@ -61,7 +61,11 @@
              </div>
              
       </section>
-  <table class="table table-striped" [hidden]="hidden">
+      <div>
+         <div>
+  <table datatable class="table table-striped" [hidden]="hidden">
+
+
     <thead>
     <tr>
       <th>Hotel Name</th>
@@ -69,8 +73,10 @@
       <th>Price per Room</th>
       <th>No Of Rooms</th>
       <th>Amenities</th>
+     
     </tr>
     </thead>
+
     <tbody>
       <tr *ngFor="let hotel of hotels">
           <td>{{hotel.hotelName}}</td>
@@ -78,7 +84,10 @@
           <td>{{hotel.pricePerRoom}}</td>
           <td>{{hotel.noOfRooms}}</td>
           <td>{{hotel.amenities}}</td>
-          <td><button class="btn btn-success" routerLink="/confirm-booking"> Book hotel</button></td>
+          <td><button class="btn btn-success"  *ngIf='user_status != null'  routerLink="/confirm-booking"> Book hotel</button></td>
+          <td><button class="btn btn-success"  *ngIf='user_status == null' routerLink="/login"> Book hotel</button></td>
       </tr>
     </tbody>
   </table>
+         </div>
+      </div>

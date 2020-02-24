@@ -28,6 +28,8 @@ import { SearchResultService } from './search-result/search-result.service';
 import { ViewBookingComponent } from './view-booking/view-booking.component';
 import { ViewBookingService } from './view-booking/view-booking.service';
 import { PaymentConfirmationComponent } from './Booking/payment-confirmation/payment-confirmation.component';
+import { NgxLoadingModule ,  ngxLoadingAnimationTypes} from 'ngx-loading';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -58,6 +60,15 @@ import { PaymentConfirmationComponent } from './Booking/payment-confirmation/pay
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    NgxLoadingModule.forRoot({
+      animationType: ngxLoadingAnimationTypes.wanderingCubes,
+        backdropBackgroundColour: 'rgba(0,0,0,0.8)', 
+        backdropBorderRadius: '4px',
+        primaryColour: 'rebeccapurple', 
+        secondaryColour: 'orange', 
+        tertiaryColour: 'white'
+    }),
+    Ng2SearchPipeModule ,
     
   ],
   providers: [UserLoginServiceModule,UserRegisterServiceModule,AddHotelService,SearchResultService,ViewBookingService],

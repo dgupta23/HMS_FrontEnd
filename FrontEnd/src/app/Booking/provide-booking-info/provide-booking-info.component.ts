@@ -34,7 +34,7 @@ export class ProvideBookingInfoComponent implements OnInit {
     this.bookingLogDetails=new BookingLogDetails();
     this.reservations=new Array(this.reservation);
     this.bookingLogDetails.reservations=this.reservations;
-    this.bookingLogDetails.emailId="akash@gmail.com";
+    this.bookingLogDetails.emailId="amanraj98@gmail.com";
     this.service.confirmBooking(this.bookingLogDetails)
    .subscribe(
      data=>{

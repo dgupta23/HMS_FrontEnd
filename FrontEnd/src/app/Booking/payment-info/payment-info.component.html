@@ -33,9 +33,9 @@
         <label for="card-exp">
             Expiration
           </label>
-        <input id="card-month" type="number" placeholder="MM" maxlength="2" pattern="[0-9]*"
+        <input id="card-month" type="number" placeholder="MM" maxlength="2" pattern="0[1-9]|1[0-2]"
         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
-        <input id="card-year" type="number" placeholder="YY" maxlength="2" pattern="[0-9]*"
+        <input id="card-year" type="number" placeholder="YY" maxlength="2" pattern="[2-3][0-9]"
         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
       </div>
           <div id="cvc-container">
