@@ -1,5 +1,33 @@
 <body>
-   <section id="cover" class="min-vh-100">
+   <div class="card" [hidden]="hidden" *ngFor="let hotel of hotels ; let i = index ">
+      <div class="container1" >
+         <div class="images">
+            <img
+               src="https://ak6.picdn.net/shutterstock/videos/15407836/thumb/1.jpg" />
+         </div>
+
+         <p class="pick"><b><i>Amenities: </i></b>{{hotel.amenities}}</p>
+         <!-- <p class="size"> {{hotel.amenities}}</p> -->
+         
+         <p class="pick1">No. of Rooms: {{hotel.noOfRooms}}</p>
+
+ 
+
+         <div class="product">
+            <p>Hotel</p>
+            <h1>{{hotel.hotelName}}</h1>
+            <h2>₹ {{hotel.pricePerRoom}}</h2>
+            <p class="desc">{{hotel.location}}</p>
+            <div class="buttons">
+               <button class="btn btn-success" *ngIf='user_status != null' routerLink="/confirm-booking"> Book
+                  hotel</button>
+               <button class="btn btn-success" *ngIf='user_status == null' routerLink="/login"> Book hotel</button>
+            </div>
+         </div>
+      </div>
+
+   </div>
+   <section id="cover" class="min-vh-100" [hidden]="!hidden">
       <link rel="stylesheet" type="text/css"
          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <div id="cover-caption">
@@ -57,39 +85,46 @@
       </div>
 
    </section>
-   <table datatable class="table table-striped" [hidden]="hidden">
-      <thead>
-         <tr>
-            <th>Index</th>
-            <th>Hotel Name</th>
-            <th>Location</th>
-            <th>Price per Room</th>
-            <th>No Of Rooms</th>
-            <th>Amenities</th>
-            <button class="btn btn-outline-dark navbar-btn" style="float:right;"><a class="nav-link"
-                  style="float:right;" href="#" routerLink='/filter'>Filter</a></button>
-         </tr>
 
-      </thead>
-      <tbody>
-         <tr id="table-hotel" *ngFor="let hotel of hotels ; let i = index ">
-            <td>{{i}}</td>
-            <td>{{hotel.hotelName}}</td>
-            <td>{{hotel.location}}</td>
-            <td>{{hotel.pricePerRoom}}</td>
-            <td>{{hotel.noOfRooms}}</td>
-            <td>{{hotel.amenities}}</td>
-
-            <td><button class="btn btn-success" *ngIf='user_status != null' routerLink="/confirm-booking"> Book
-                  hotel</button></td>
-            <td><button class="btn btn-success" *ngIf='user_status == null' routerLink="/login"> Book hotel</button>
-            </td>
-
-
-         </tr>
-      </tbody>
-
-
-   </table>
 
 </body>
+
+<script>
+   $(".size").on('click', function () {
+      $(this).toggleClass('focus').siblings().removeClass('focus');
+   })
+</script>
+<!-- <table datatable class="table table-striped" [hidden]="hidden">
+   <thead>
+      <tr>
+         <th>Index</th>
+         <th>Hotel Name</th>
+         <th>Location</th>
+         <th>Price per Room</th>
+         <th>No Of Rooms</th>
+         <th>Amenities</th>
+         <button class="btn btn-outline-dark navbar-btn" style="float:right;"><a class="nav-link"
+               style="float:right;" href="#" routerLink='/filter'>Filter</a></button>
+      </tr>
+
+   </thead>
+   <tbody>
+      <tr id="table-hotel" *ngFor="let hotel of hotels ; let i = index ">
+         <td>{{i}}</td>
+         <td>{{hotel.hotelName}}</td>
+         <td>{{hotel.location}}</td>
+         <td>{{hotel.pricePerRoom}}</td>
+         <td>{{hotel.noOfRooms}}</td>
+         <td>{{hotel.amenities}}</td>
+
+         <td><button class="btn btn-success" *ngIf='user_status != null' routerLink="/confirm-booking"> Book
+               hotel</button></td>
+         <td><button class="btn btn-success" *ngIf='user_status == null' routerLink="/login"> Book hotel</button>
+         </td>
+
+
+      </tr>
+   </tbody>
+
+
+</table> -->

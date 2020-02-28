@@ -53,9 +53,9 @@ export class HomePageComponent implements OnInit {
     this.service.searchHotel(this.location, this.checkInDate, this.checkOutDate).subscribe(
       data => {
         this.hotels = data;
-        console.log(this.hotels[1]);
+        console.log(this.hotels);
         this.cookieService.set('hotels',this.hotels);
-        console.log(this.cookieService.get('hotels'));
+     
       }
     );
     this.hidden = false;
@@ -64,7 +64,6 @@ export class HomePageComponent implements OnInit {
 
 
   }
-
 
   // onSubmitForAdmin(){
   //   this.service.searchHotelForAdmin(this.location).subscribe(
