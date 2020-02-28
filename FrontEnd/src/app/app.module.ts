@@ -30,6 +30,7 @@ import { ViewBookingService } from './view-booking/view-booking.service';
 import { PaymentConfirmationComponent } from './Booking/payment-confirmation/payment-confirmation.component';
 import { NgxLoadingModule ,  ngxLoadingAnimationTypes} from 'ngx-loading';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {CookieService} from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -71,7 +72,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     Ng2SearchPipeModule ,
     
   ],
-  providers: [UserLoginServiceModule,UserRegisterServiceModule,AddHotelService,SearchResultService,ViewBookingService],
+  providers: [UserLoginServiceModule,UserRegisterServiceModule,AddHotelService,SearchResultService,ViewBookingService,CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

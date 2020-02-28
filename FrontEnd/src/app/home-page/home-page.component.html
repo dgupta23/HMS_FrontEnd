@@ -1,80 +1,95 @@
-
 <body>
-    <section id="cover" class="min-vh-100">
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <div id="cover-caption">
-               <div class="container">
-                  <div class="tabing">
-                     
-                     <div class="tab-content">
-                        <form (ngSubmit)="onSubmit()"  #searchForm="ngForm" id="1" class="tab1 active">
-                           <div class="flight-tab row">
-                              <div class="persent-one">
-                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                 <label name="dep" class="textboxstyle" id="dep" placeholder="City/Hotel">
-                                 <select class="form-control" placeholder="Location" id="exampleFormControlSelect1" [(ngModel)]="location" name="location">
-                                    <option>Bangalore</option>
-                                    <option>New Delhi</option>
-                                    <option>Hyderabad</option>
-                                    <option>Kolkata</option>
-                                    <option>Mumbai</option>
-                                  </select>
-                                 </label>
-                              </div>
-                             
-                              <div class="persent-one less-per">
-                                 <i class="fa fa-calendar" aria-hidden="true"></i>
-                                 <input type="date" name="dep" class="textboxstyle" id="from-date1" min="2020-02-24"  max="2020-12-31" placeholder="Check-In Date"  [(ngModel)]="checkInDate" name="checkInDate"><b><font color="yellow">Check-In Date</font></b>
-                               
-                              </div>
-                              
-                              <div class="persent-one less-per">
-                                 <i class="fa fa-calendar" aria-hidden="true"></i>
-                                 <input type="date" name="dep" class="textboxstyle" id="to-date" min="2020-02-24"  max="2020-12-31" placeholder="Check-Out Date" [(ngModel)]="checkOutDate" name="checkOutDate"><b><font color="yellow">Check-Out Date</font></b>
-                              </div>
-                             
-                              <div class="persent-one less-btn"  >
-                                 <input type="Submit" name="submit" value="Search" class="btn btn-info cst-btn" id="srch">
-                              </div>
-                           </div>
-                           <!-- flight tab -->
-                        </form>
-                       
+   <section id="cover" class="min-vh-100">
+      <link rel="stylesheet" type="text/css"
+         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <div id="cover-caption">
+         <div class="container">
+            <div class="tabing">
+
+               <div class="tab-content">
+                  <form (ngSubmit)="onSubmit()" #searchForm="ngForm" id="1" class="tab1 active">
+                     <div class="flight-tab row">
+                        <div class="persent-one">
+                           <i class="fa fa-map-marker" aria-hidden="true"></i>
+                           <label name="dep" class="textboxstyle" id="dep" placeholder="City/Hotel">
+                              <select class="form-control" placeholder="Location" id="exampleFormControlSelect1"
+                                 [(ngModel)]="location" name="location">
+                                 <option>Bangalore</option>
+                                 <option>New Delhi</option>
+                                 <option>Hyderabad</option>
+                                 <option>Kolkata</option>
+                                 <option>Mumbai</option>
+                              </select>
+                           </label>
+                        </div>
+
+                        <div class="persent-one less-per">
+                           <i class="fa fa-calendar" aria-hidden="true"></i>
+                           <input type="date" name="dep" class="textboxstyle" id="from-date1" min="2020-02-25"
+                              max="2020-12-31" placeholder="Check-In Date" [(ngModel)]="checkInDate"
+                              name="checkInDate"><b>
+                              <font color="yellow">Check-In Date</font>
+                           </b>
+
+                        </div>
+
+                        <div class="persent-one less-per">
+                           <i class="fa fa-calendar" aria-hidden="true"></i>
+                           <input type="date" name="dep" class="textboxstyle" id="to-date" min="2020-02-25"
+                              max="2020-12-31" placeholder="Check-Out Date" [(ngModel)]="checkOutDate"
+                              name="checkOutDate"><b>
+                              <font color="yellow">Check-Out Date</font>
+                           </b>
+                        </div>
+
+                        <div class="persent-one less-btn">
+                           <input type="Submit" name="submit" value="Search" class="btn btn-info cst-btn" id="srch">
+                        </div>
                      </div>
-                     </div>
-                     <!-- tab content -->
-                  </div>
-                  <!-- tabbing -->
+                     <!-- flight tab -->
+                  </form>
+
                </div>
-               
-        </section>
-        <table datatable class="table table-striped" [hidden]="hidden">
-            <thead>
-            <tr>
-              <th>Hotel Name</th>
-              <th>Location</th>
-              <th>Price per Room</th>
-              <th>No Of Rooms</th>
-              <th>Amenities</th>
-              <button class="btn btn-outline-dark navbar-btn" style="float:right;"><a class="nav-link"
-                style="float:right;" href="#" routerLink='/filter'>Filter</a></button>
-            </tr>
-           
-            </thead>
-            <tbody>
-              <tr *ngFor="let hotel of hotels">
-                  <td>{{hotel.hotelName}}</td>
-                  <td>{{hotel.location}}</td>
-                  <td>{{hotel.pricePerRoom}}</td>
-                  <td>{{hotel.noOfRooms}}</td>
-                  <td>{{hotel.amenities}}</td>
-                  <td><button class="btn btn-success"  *ngIf='user_status != null' routerLink="/confirm-booking"> Book hotel</button></td>
-                  <td><button class="btn btn-success"  *ngIf='user_status == null' routerLink="/login"> Book hotel</button></td>
-                  
-                  
-              </tr>
-            </tbody>
-      
-          </table>
-        
-            </body>
+            </div>
+            <!-- tab content -->
+         </div>
+         <!-- tabbing -->
+      </div>
+
+   </section>
+   <table datatable class="table table-striped" [hidden]="hidden">
+      <thead>
+         <tr>
+            <th>Index</th>
+            <th>Hotel Name</th>
+            <th>Location</th>
+            <th>Price per Room</th>
+            <th>No Of Rooms</th>
+            <th>Amenities</th>
+            <button class="btn btn-outline-dark navbar-btn" style="float:right;"><a class="nav-link"
+                  style="float:right;" href="#" routerLink='/filter'>Filter</a></button>
+         </tr>
+
+      </thead>
+      <tbody>
+         <tr id="table-hotel" *ngFor="let hotel of hotels ; let i = index ">
+            <td>{{i}}</td>
+            <td>{{hotel.hotelName}}</td>
+            <td>{{hotel.location}}</td>
+            <td>{{hotel.pricePerRoom}}</td>
+            <td>{{hotel.noOfRooms}}</td>
+            <td>{{hotel.amenities}}</td>
+
+            <td><button class="btn btn-success" *ngIf='user_status != null' routerLink="/confirm-booking"> Book
+                  hotel</button></td>
+            <td><button class="btn btn-success" *ngIf='user_status == null' routerLink="/login"> Book hotel</button>
+            </td>
+
+
+         </tr>
+      </tbody>
+
+
+   </table>
+
+</body>

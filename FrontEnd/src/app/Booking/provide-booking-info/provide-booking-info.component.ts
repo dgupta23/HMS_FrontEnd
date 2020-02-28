@@ -5,6 +5,8 @@ import { ToastrService } from 'ngx-toastr';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Reservation } from 'src/app/Models/Reservation';
 import { BookingLogDetails } from 'src/app/Models/BookingLogDetails';
+import {CookieService} from 'ngx-cookie-service';
+import { Hotel } from 'src/app/models/hotel';
 
 @Component({
   selector: 'app-provide-booking-info',
@@ -16,16 +18,32 @@ export class ProvideBookingInfoComponent implements OnInit {
   reservation:Reservation;
   reservations:Reservation[];
   bookingLogDetails:BookingLogDetails;
+  checkIn:String;
+  checkOut:String;
+ 
 
   message:string;
   constructor(private service:ConfirmBookingService, private toasterService: ToastrService,private _router: Router,
-    private _route: ActivatedRoute, ) { 
+    private _route: ActivatedRoute,public cookieService:CookieService ) { 
       this.reservation=new Reservation();
       
   }
 
   ngOnInit() {
-    
+    // var date = new Date(localStorage.getItem('checkIn'));
+    // this.reservation.checkinDate= date;
+    // var date1 = new Date(localStorage.getItem('checkOut'));
+    // this.reservation.checkoutDate= date1;
+    // console.log(date);
+//this.checkIn =  this.cookieService.get('checkIn').substring(8, 10) + '-' + this.cookieService.get('checkIn').substring(5, 7) + '-' + this.cookieService.get('checkIn').substring(0, 4);
+this.checkOut = this.cookieService.get('checkOut');
+this.checkIn = this.cookieService.get('checkIn');
+this.reservation.checkinDate = new Date(this.checkIn.toString());
+this.reservation.checkoutDate = new Date(this.checkOut.toString());
+
+
+// new Date(this.checkIn.toString());
+//console.log(this.reservation.checkinDate.toDateString());
   }
 
   confirmBooking(){

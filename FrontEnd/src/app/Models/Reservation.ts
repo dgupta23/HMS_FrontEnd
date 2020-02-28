@@ -5,4 +5,8 @@ export class Reservation{
    phoneNo:string;
    checkinDate:Date;
    checkoutDate:Date;
+
+   constructor(){
+       this.hotelID=1;
+   }
 }
