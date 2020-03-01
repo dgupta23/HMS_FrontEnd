@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { HomePageService } from './home-page.service';
 import { UserLoginServiceModule } from '../user/login/login.service';
 import { CookieService } from 'ngx-cookie-service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Hotel } from '../models/hotel';
+import { variable } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-home-page',
@@ -19,11 +20,13 @@ export class HomePageComponent implements OnInit {
   hotels;
   minPrice:number;
   maxPrice:number;
+
   loggedUser: any = null;
   user_status: any = null;
   cookieValue: String;
   hotel: Hotel[];
-  constructor(private router: Router, private service: HomePageService, public cookieService: CookieService) { }
+  constructor(private router: Router, private service: HomePageService, public cookieService: CookieService, private _router: Router,
+    private _route: ActivatedRoute,) { }
 
   public ngOnInit() {
     this.hidden = true;
@@ -70,12 +73,27 @@ export class HomePageComponent implements OnInit {
     this.service.searchHotels(this.location,this.checkInDate,this.checkOutDate,this.minPrice,this.maxPrice).subscribe(
       data=>{
         this.hotels=data;
-        console.log("hi");
-        console.log(this.hotels);
-        console.log("bye");
+       
       }
     );
   }
+
+book(j:number){
+
+
+console.log(this.hotels[j]);
+this.cookieService.set('selectedHotel', this.hotels[j].toString());
+
+
+
+  this._router.navigate(['/confirm-booking']);
+}
+
+
+
+
+
+
 w3_open() {
 
   document.getElementById("mySidebar").style.width = "15%";

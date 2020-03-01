@@ -86,13 +86,14 @@
 
 
             <div class="product">
+
                <p>Hotel</p>
                <h1>{{hotel.hotelName}}</h1>
                <h2>₹ {{hotel.pricePerRoom}}</h2>
                <p class="desc">{{hotel.location}}</p>
                <div class="buttons">
-                  <button class="btn btn-success" *ngIf='user_status != null' routerLink="/confirm-booking"> Book
-                     hotel</button>
+                  <button class="btn btn-success" *ngIf='user_status != null' (click)='book(i)'> Book
+                     hotel </button>
                   <button class="btn btn-success" *ngIf='user_status == null' routerLink="/login"> Book hotel</button>
                </div>
             </div>

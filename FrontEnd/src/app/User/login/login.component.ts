@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
             })
             
           localStorage.setItem('currentUser', data);
-          console.log(JSON.stringify(localStorage.getItem('currentUser'))["mail"]);
+         
           UserLoginServiceModule.loggedINUser = JSON.stringify(localStorage.getItem('currentUser'));
           UserLoginServiceModule.loginEventEmitter.emit(UserLoginServiceModule.loginEventEmitter);
           this.userLogForm.reset();
