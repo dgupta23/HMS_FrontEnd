@@ -1,12 +1,5 @@
 
-body,
-  html {
-    margin: 0;
-    padding: 65px;
-    height: 100%;
-    background:  #60a3bc ;
-    
-}
+
 .card {
     height: 500px;
     width: 400px;

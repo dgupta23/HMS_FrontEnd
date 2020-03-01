@@ -42,6 +42,20 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
 } */
+.searched{
+  background-color: lightsalmon;
+  height: 100px;
+  margin-top: 10px;
+  padding-top: 10px;  margin-bottom: 2px;
+  
+}
+.filter{
+  box-sizing: border-box;
+  color: #ba0400;
+  background-color: lightsalmon;
+  border-radius: 10px;
+  border-color: black;
+}
 .flight-engine {
     position: relative;
     left: 0px;

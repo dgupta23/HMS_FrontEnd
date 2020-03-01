@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-purple ">
+   
+
+    <div class="navbar-brand">
+        <a class="navbar-item" style="color:chartreuse; font-family: Verdana, Geneva, Tahoma, sans-serif;" >NIRMAAN
+        </a>
+    </div>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="nav navbar-nav  justify-content-right">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/"  style="color:rgb(7, 8, 5); ">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" routerLink="/aboutus" style="color:rgb(7, 8, 5); ">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" routerLink='/footer' style="color:rgb(7, 8, 5); ">Contact</a>
+            </li>
+            
+        </ul>
+
+        <div class="nav-item">
+            <a *ngIf='user_role == true' class="nav-link" href="#" routerLink='/add-hotel'> <span
+                    class="fa fa-user-plus">
+                    &nbsp;</span>Add Hotel</a>
+        </div>
+        <div class="nav-links">
+            <a *ngIf='user_role == false' class="nav-link" href="#" routerLink='/view-booking' style="color: rgb(15, 7, 13); ">
+                <span class="fa fa-shopping-bag"> &nbsp;</span>View Booking</a>
+        </div>
+    
+        
+        <div class="align-self-end ml-auto">
+            <button class="btn  navbar-btn" style="float:right;" *ngIf='!loggedUser'><a class="nav-link"
+                    style="float:right;" href="#" routerLink='/login' style="color: black;">Login</a></button>
+            <button class="btn  navbar-btn" *ngIf='!loggedUser'><a class="nav-link" style="float:right;" href="#"
+                    routerLink='/register'  style="color: black;">Sign Up</a></button>&nbsp;&nbsp;
+      
+
+        </div>
+        <div class="navbar dropdown">
+            <button class="btn navbar-btn" *ngIf='loggedUser'><a class="fa fa-user" href="#" routerLink='/profile' style="color: rgb(15, 7, 13); "><b>Hi!<i>
+                            {{name}}</i></b></a>
+            </button>
+        </div>
+
+
+        <div class="nav-links">
+            <a *ngIf='loggedUser' class="nav-link" (click)='logout()'>
+                <span class="fa fa-power-off"> &nbsp;</span>Logout</a>
+        </div>
+
+
+    </div>
+</nav>

@@ -1,31 +1,81 @@
 <body>
-   <div class="card" [hidden]="hidden" *ngFor="let hotel of hotels ; let i = index ">
-      <div class="container1" >
-         <div class="images">
-            <img
-               src="https://ak6.picdn.net/shutterstock/videos/15407836/thumb/1.jpg" />
-         </div>
+   <div [hidden]="hidden">
+      <div class="searched">
+         <form (ngSubmit)="onSubmit()" #searchForm="ngForm" id="1" class="tab1 active">
+            <div class="flight-tab row">
+               <div class="persent-one">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  <label name="dep" class="textboxstyle" id="dep" placeholder="City/Hotel">
+                     <select class="form-control" placeholder="Location" id="exampleFormControlSelect1"
+                        [(ngModel)]="location" name="location">
+                        <option>Bangalore</option>
+                        <option>New Delhi</option>
+                        <option>Hyderabad</option>
+                        <option>Kolkata</option>
+                        <option>Mumbai</option>
+                     </select>
+                  </label>
+               </div>
 
-         <p class="pick"><b><i>Amenities: </i></b>{{hotel.amenities}}</p>
-         <!-- <p class="size"> {{hotel.amenities}}</p> -->
-         
-         <p class="pick1">No. of Rooms: {{hotel.noOfRooms}}</p>
+               <div class="persent-one less-per">
+                  <i class="fa fa-calendar" aria-hidden="true"></i>
+                  <input type="date" name="dep" class="textboxstyle" id="from-date1" min="2020-02-25" max="2020-12-31"
+                     placeholder="Check-In Date" [(ngModel)]="checkInDate" name="checkInDate"><b>
+                     <font color="yellow">Check-In Date</font>
+                  </b>
 
- 
+               </div>
 
-         <div class="product">
-            <p>Hotel</p>
-            <h1>{{hotel.hotelName}}</h1>
-            <h2>₹ {{hotel.pricePerRoom}}</h2>
-            <p class="desc">{{hotel.location}}</p>
-            <div class="buttons">
-               <button class="btn btn-success" *ngIf='user_status != null' routerLink="/confirm-booking"> Book
-                  hotel</button>
-               <button class="btn btn-success" *ngIf='user_status == null' routerLink="/login"> Book hotel</button>
+               <div class="persent-one less-per">
+                  <i class="fa fa-calendar" aria-hidden="true"></i>
+                  <input type="date" name="dep" class="textboxstyle" id="to-date" min="2020-02-25" max="2020-12-31"
+                     placeholder="Check-Out Date" [(ngModel)]="checkOutDate" name="checkOutDate"><b>
+                     <font color="yellow">Check-Out Date</font>
+                  </b>
+               </div>
+
+               <div class="persent-one less-btn">
+                  <input type="Submit" name="submit" value="Search" class="btn btn-info cst-btn" id="srch">
+                 
+               </div>
+               <button  class="filter"
+               href="#" routerLink='/filter'>Filter</button>
+      
+            </div>
+            <!-- flight tab -->
+         </form>
+
+
+      </div>
+      <br>
+      <div class="card" *ngFor="let hotel of hotels ; let i = index ">
+
+         <div class="container1">
+            <div class="images">
+               <img src="https://ak6.picdn.net/shutterstock/videos/15407836/thumb/1.jpg" />
+            </div>
+
+            <p class="pick"><b><i>Amenities: </i></b>{{hotel.amenities}}</p>
+            <!-- <p class="size"> {{hotel.amenities}}</p> -->
+
+            <p class="pick1">No. of Rooms: {{hotel.noOfRooms}}</p>
+
+
+
+            <div class="product">
+               <p>Hotel</p>
+               <h1>{{hotel.hotelName}}</h1>
+               <h2>₹ {{hotel.pricePerRoom}}</h2>
+               <p class="desc">{{hotel.location}}</p>
+               <div class="buttons">
+                  <button class="btn btn-success" *ngIf='user_status != null' routerLink="/confirm-booking"> Book
+                     hotel</button>
+                  <button class="btn btn-success" *ngIf='user_status == null' routerLink="/login"> Book hotel</button>
+               </div>
             </div>
          </div>
-      </div>
 
+      </div>
    </div>
    <section id="cover" class="min-vh-100" [hidden]="!hidden">
       <link rel="stylesheet" type="text/css"

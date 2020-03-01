@@ -62,9 +62,11 @@ export class NavbarComponent implements OnInit {
 
   logout(){
     localStorage.clear();
+    console.log(this.mail);
     this._userService.logout(this.mail).subscribe(
       data => {
-        if (JSON.stringify(data).indexOf("Success") >= 0) {
+        console.log( this.name);
+        if (JSON.stringify(data).indexOf("success") >= 0) {
 
           this.toasterService.success(
             "Logout Successfull ",
@@ -80,7 +82,7 @@ export class NavbarComponent implements OnInit {
           this.router.navigate(['/home']);
         }
         else {
-
+          console.log( "hi");
           this.toasterService.error(
             JSON.stringify(data),
             this.errMsg,
@@ -112,5 +114,6 @@ export class NavbarComponent implements OnInit {
     UserLoginServiceModule.loggedINUser = null;
     UserLoginServiceModule.loginEventEmitter.emit(UserLoginServiceModule.loggedINUser);
     this.router.navigate(['/login']);
+    localStorage.clear();
   }
 }

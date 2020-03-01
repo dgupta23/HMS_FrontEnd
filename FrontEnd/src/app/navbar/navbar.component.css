@@ -4,15 +4,23 @@
     padding-left:30px;
     padding-right:30px;;
 }
-.navbar
-{
-    background-image: url('C:\Users\araj15\Documents\GitHub\HMS_FrontEnd\FrontEnd\src\assets\images\watermark background My Gingiberi.png'); 
-}
 
 .navbar-brand
-{
+{   text-align: center;
     font-weight: bold;
     font-style: italic;
+}
+.navbar-item{
+display: inline-block;
+}
+.navbar-btn{
+
+  font-size: large;
+  font-weight: bold;
+  font-style: italic;
+}
+.navbar-btn:hover{
+  background-color: lightblue;
 }
 li {
   float: left;
@@ -28,5 +36,65 @@ li a {
 
 
 li a:hover {
-  background-color: rgb(190, 228, 20);
+  background-color:lightsalmon;
+}
+
+
+/*u[*/
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,500&display=swap');
+
+body {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 500;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  background-image: linear-gradient(to right, #5d1dd4 0%, #ee1e4b 100%);
+  align-items: center;
+  height: 50px;
+  padding: 0;
+  letter-spacing: 0px;
+  box-shadow: 0 8px 6px -6px #ccc;
+  overflow: hidden;
+}
+
+.nav-links {
+  padding: 20px 20px 20px 20px;
+  height: 100%;
+  transition: all 0.2s ease;
+}
+
+.nav-links:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.fas {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+ 
+  .nav-links {
+    width: 100%;
+    align-self: center;
+    text-align: center;
+  }
+  
+  .fas {
+    display: inline-block;
+    margin-left: right;
+  }
 }
