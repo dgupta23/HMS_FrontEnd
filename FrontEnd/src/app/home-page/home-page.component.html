@@ -1,3 +1,6 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <body>
    <div [hidden]="hidden">
       <div class="searched">
@@ -36,19 +39,39 @@
 
                <div class="persent-one less-btn">
                   <input type="Submit" name="submit" value="Search" class="btn btn-info cst-btn" id="srch">
-                 
+
                </div>
-               <button  class="filter"
-               href="#" routerLink='/filter'>Filter</button>
-      
+
+               <button id="openNav" class="filter" (click)='w3_open()'>Filter</button>
             </div>
+          
             <!-- flight tab -->
          </form>
+         <div>
+            <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none;right:0" id="mySidebar">
+               <button (click)="w3_close()" class="w3-bar-item w3-large" style="color: darkmagenta;">Close &times;</button>
 
+               <br><br><br><br>
+               <a>
+                  <label class="sr-only">Minimum Price</label>
+                  <input type="number" class="form-control" placeholder="Minimum Price" [(ngModel)]="minPrice"
+                     name="minPrice">
+               </a>
+
+               <br><br>
+               <a>
+                  <label class="sr-only">Maximum Price</label>
+                  <input type="number" class="form-control" placeholder="Maximum Price" [(ngModel)]="maxPrice"
+                     name="maxPrice">
+               </a>
+               <br><br><br>
+               <button style="text-align: center;" class="filter1" (click)='filtered()'>Filter</button>
+            </div>
+         </div>
 
       </div>
       <br>
-      <div class="card" *ngFor="let hotel of hotels ; let i = index ">
+      <div id="main" class="card" *ngFor="let hotel of hotels ; let i = index ">
 
          <div class="container1">
             <div class="images">
@@ -143,6 +166,7 @@
    $(".size").on('click', function () {
       $(this).toggleClass('focus').siblings().removeClass('focus');
    })
+
 </script>
 <!-- <table datatable class="table table-striped" [hidden]="hidden">
    <thead>

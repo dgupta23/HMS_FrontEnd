@@ -17,7 +17,8 @@ export class HomePageComponent implements OnInit {
   checkInDate: Date;
   checkOutDate: Date;
   hotels;
-
+  minPrice:number;
+  maxPrice:number;
   loggedUser: any = null;
   user_status: any = null;
   cookieValue: String;
@@ -65,6 +66,28 @@ export class HomePageComponent implements OnInit {
 
   }
 
+  filtered(){
+    this.service.searchHotels(this.location,this.checkInDate,this.checkOutDate,this.minPrice,this.maxPrice).subscribe(
+      data=>{
+        this.hotels=data;
+        console.log("hi");
+        console.log(this.hotels);
+        console.log("bye");
+      }
+    );
+  }
+w3_open() {
+
+  document.getElementById("mySidebar").style.width = "15%";
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+  }
+  
+w3_close() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+  }
   // onSubmitForAdmin(){
   //   this.service.searchHotelForAdmin(this.location).subscribe(
   //     data=>{

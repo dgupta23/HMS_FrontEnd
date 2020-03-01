@@ -56,6 +56,21 @@
   border-radius: 10px;
   border-color: black;
 }
+.filter1{
+  align-content: center;
+  box-sizing: border-box;
+  margin-left: 50px;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  color: #ba0400;
+  background-color: lightsalmon;
+
+}
+#mySidebar{
+  background-image: linear-gradient(to right, #5d1dd4 0%, #ee1e4b 100%);
+ 
+}
 .flight-engine {
     position: relative;
     left: 0px;
