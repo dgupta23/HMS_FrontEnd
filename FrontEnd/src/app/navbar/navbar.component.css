@@ -1,16 +1,4 @@
- /* .navbar-item
-{
-    position: relative;
-    background: assets/images/logo.png;
-    width : 10px;
-    left: 15px;
-    max-height: 10px; /* height of the navbar */
 
-    /* #nav li {
-        display: inline;
-        COLOR:"Red";
-        padding-right: 30px;
-      } */
 .right-margin
 {
     padding-left:30px;
@@ -38,7 +26,7 @@ li a {
   text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
+
 li a:hover {
   background-color: rgb(190, 228, 20);
 }
